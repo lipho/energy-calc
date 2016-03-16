@@ -97,3 +97,38 @@
 
 #calc main p + p::before { content: "$" }
 #calc main p + p::after { content: "per year"; color: rgba(255,255,255,.5); padding-left: 4px; }
+
+#calc form {
+    background-color: #000;
+    margin:0;
+    padding: 10px 0px;
+}
+
+#calc form br { display: none;}
+
+#calc form  > div {
+    color: #fff;
+    width: 33%;
+    float: left;
+    text-align: center;
+    padding: 10px 0 5px 0;
+}
+
+#calc form::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#calc form h4 {
+    color: #aaa;
+    margin: 0 0 -5px 0;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+#calc form p {
+    color: #888;
+    margin: 0 0 6px 0;
+    font-size:.9em;
+}
