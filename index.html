@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="energyCalculator">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,13 +10,13 @@
 	</head>
 	<body>
 
-	<div id="calc">
+	<div id="calc" ng-controller="CalcCtrl">
 		
 		 <main>
 			 <section class="inc">
 				 <div>
 					 <h4>Incandescent</h4>
-					 <p>100.0</p>
+					 <p>{{inc_wattage}}</p>
 					 <p>13.14</p>
 				 </div>
 			 </section>
@@ -51,20 +51,17 @@
 			<div>
 				<h4>Lumens</h4>
 				<p>Brightness <br>of bulb</p>
-				<select>
-					<option value="600">600</option>
-					<option value="900">900</option>
-				</select>
+				<select ng-model="current_lum" ng-options="o as o for o in lumens"></select>
 			</div>
 			<div>
 				<h4>kWh</h4>
 				<p>Kilowatt-<br>hour cost</p>
-				<input type="number" value="12"> cents
+				<input type="number" ng-model="current_cost" ng-value="{{current_cost}}"> cents
 			</div>
 			<div>
 				<h4>Hours</h4>
 				<p>Usage <br>per day</p>
-				<input type="number" value="13">
+				<input type="number" ng-model="current_hrs" ng-value="{{current_hrs}}">
 			</div>
 			<div></div>
 		</form>
